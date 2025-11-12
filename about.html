@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #262626f1;
+            color: white;
+            height: 70px;
+            box-shadow: rgba(100, 100, 111, 0.648) 0px 7px 29px 0px;
+
+        }
+
+        .icons i {
+            margin-right: 20px;
+        }
+
+        #logo p {
+            font-size: 10px;
+        }
+
+        #list ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+            gap: 30px;
+            align-items: center;
+
+            :hover {
+                color: green;
+            }
+        }
+
+        li {
+            margin-right: 0;
+            white-space: nowrap;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .dropbtn {
+            background-color: #4caf4f00;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e4100;
+        }
+        aside img{
+            max-width: 100px;
+            border-radius: 10px;
+        }
+        .rate{
+            margin-top: 20px;
+            
+        }
+        aside{
+            background-color: #00000006;
+            padding-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar1">
+        <div id="logo" style="margin-left: 15px;">
+            <h2>XTRA</h2>
+            <p>FLOWER SHOP</p>
+        </div>
+        <div id="list">
+            <ul>
+                <li>
+                    <a href="index.html">HOME</a>
+                </li>
+                <li class="dropdown">
+                    <p class="dropbtn">SHOP
+                    <div class="dropdown-content">
+                        <a href="#"><a href="allproduct.html">All prroduct</a></a>
+                        <a href="#"><a href="cart.html">Cart</a></a>
+                        <a href="#"><a href="#">My account</a></a>
+                    </div>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="about.html">ABOUT</a>
+                </li>
+                <li>
+                    <a href="contact.html">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="icons">
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></i>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </nav>
+    <div style="margin-top: 50px; display: flex; justify-content: space-around;">
+        <div>
+            <p style="color: #3e8e41; font-size: 45px;">ABOUT US</p>
+            <p style="font-size: 20px;color: #262626a7">WHO WE ARE?</p>
+            <p style="max-width: 400px; color: #262626a7">Floristry is the production, commerce, and trade in flowers. It encompasses
+                flower care and handling,
+                floral design, or flower arranging, merchandising, production, display and flower delivery. Wholesale
+                florists sell bulk flowers and related supplies to professionals in the trade. Retail florists offer
+                fresh flowers and related products and services to consumers. The first flower shop in the United States
+                opened prior to 1851.</p>
+            <p style="max-width: 400px; color: #262626a7">Flower Shop concerns the cultivation of flowers as well as their arrangement, sale. Much of the raw
+                material supplied for the floristry trade comes from the cut flowers industry. Florist shops, along with
+                online stores, are the main flower-only outlets, but supermarkets, garden supply stores, and filling
+                stations also sell flowers.</p>
+        </div>
+        <div>
+            <img src="Screenshot 2025-11-11 144042.png" alt="" style="border-radius: 10px; width: 500px;">
+        </div>
+    </div>
+    <aside>
+        <h1 style="display: flex; justify-content: center; padding: 20px;">REVIEWS</h1>
+        <div style="display: flex;justify-content: space-around; margin: 20px;height: 330px; ">
+            <div style="border: 1px solid black; display: flex; flex-direction: column; align-items: center; width: 22%; text-align: center; background-color: white; box-shadow: rgba(0, 0, 0, 0.36) 0px 3px 8px;">
+                <img src="user.png" alt="" style="margin-top: 10px;">
+                <div class="rate">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p style="font-size: 20px;"><b>Crips and refreshing!</b></p>
+                <p style="font-size: 12px; color: rgba(0, 0, 0, 0.819); max-width: 200px; margin-bottom: 0px; margin-top: 0px;">Found great quality items at budget-friendly prices. Staff gave honest recommendations without
+                    pressure. Perfect for affordable makeup hauls.
+                </p>
+                <p><b>Aarav Mhata</b></p>
+            </div>
+            <div style="border: 1px solid black; display: flex; flex-direction: column; align-items: center; width: 22%; text-align: center; box-shadow: rgba(0, 0, 0, 0.36) 0px 3px 8px;">
+                <img src="user.png" alt="" style=" margin-top: 10px;">
+                <div class="rate">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p style="font-size: 20px;"><b>Crips and refreshing!</b></p>
+                <p style="font-size: 12px; color: rgba(0, 0, 0, 0.819); max-width: 200px; margin-bottom: 0px; margin-top: 0px;">Amazing selection of makeup, but the checkout was slow. Staff were polite but seemed overwhelmed.
+                    Worth visiting for the product variety.
+                </p>
+                <p><b>Aarav Mhata</b></p>
+            </div>
+            <div style="border: 1px solid black; display: flex; flex-direction: column;align-items: center; width: 22%; text-align: center; box-shadow: rgba(0, 0, 0, 0.36) 0px 3px 8px;">
+                <img src="user.png" alt="" style="margin-top: 10px;">
+                <div class="rate">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p style="font-size: 20px;"><b>Crips and refreshing!</b></p>
+                <p style="font-size: 12px; color: rgba(0, 0, 0, 0.819); max-width: 200px; margin-bottom: 0px; margin-top: 0px;">Found great quality items at budget-friendly prices. Staff gave honest recommendations without
+                    pressure. Perfect for affordable makeup hauls.
+
+                </p>
+                <p><b>Aarav Mhata</b></p>
+            </div>
+            <div style="border: 1px solid black; display: flex; flex-direction: column;align-items: center; width: 22%; text-align: center; box-shadow: rgba(0, 0, 0, 0.36) 0px 3px 8px;">
+                <img src="user.png" alt="" style="margin-top: 10px;">
+                <div class="rate">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p style="font-size: 20px;"><b>Crips and refreshing!</b></p>
+                <p style="font-size: 12px; color: rgba(0, 0, 0, 0.819); max-width: 200px; margin-bottom: 0px; margin-top: 0px;">Excellent range of pro-grade products and tools. Staff were knowledgeable and even offered to order
+                    an item for me. Ideal for both pros and enthusiasts.
+                </p>
+                <p><b>Aarav Mhata</b></p>
+            </div>
+        </div>
+    </aside>
+    <footer style="display: flex; height: 180px;">
+        <div style="width: 300px;height: 80px; background-color: #002626;color: white; padding: 50px;">
+            <div style="position: relative; bottom: 50px;left: 200px;">
+                <div style="margin-bottom: 50px;">
+                    <h2>XTRA</h2>
+                    <p style="font-size: 10px;color: #33c160;">FLOWER SHOP</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #e9edf5; width: 850px; height: 180px; display: flex; margin-bottom: 10px;">
+            <div style="padding: 20px;">
+                <p style="color: #33c160;">CONTACT</p>
+                <p>info@xtraflower.com</p>
+                <p>+1 (800) 345 678</p>
+            </div>
+            <div style="max-width: 250px;padding: 20px;">
+                <p style="color: #33c160;">ADDRESS</p>
+                <p>1079 Terry Lane,</p>
+                <p>Winter Park, Florida</p>
+            </div>
+            <div style="padding: 20px;">
+                <p style="color: #33c160;">WORKING HOURS</p>
+                <p>Mon-Fri 9 ~ 18</p>
+                <p>Sat-Sun 10~ 20</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
