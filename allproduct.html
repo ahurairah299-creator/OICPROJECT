@@ -2,20 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-
         body {
-
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: sans-serif;
         }
+
 
         .navbar1 {
             display: flex;
@@ -24,12 +25,18 @@
             background-color: #262626f1;
             color: white;
             height: 70px;
+            padding: 0 15px;
             box-shadow: rgba(100, 100, 111, 0.648) 0px 7px 29px 0px;
-
+            position: relative;
         }
 
         .icons i {
             margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .icon a {
+            text-decoration: none;
         }
 
         #logo p {
@@ -42,41 +49,56 @@
             justify-content: flex-start;
             gap: 30px;
             align-items: center;
-
-            :hover {
-                color: green;
-            }
+            padding: 0;
+            margin: 0;
         }
 
-        li {
-            margin-right: 0;
-            white-space: nowrap;
-        }
-
-        a {
+        #list ul li a {
             text-decoration: none;
             color: white;
         }
 
-        .second-phase {
-            display: flex;
-            background-color: #00000006;
+        .dropdown {
+            position: relative;
         }
 
-        .second-phase img {
-            margin-left: 50px;
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 100;
         }
 
-        .second-phase button {
-            color: white;
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
             background-color: black;
-            border: none;
-            padding: 10px;
         }
 
-        #info {
-            margin-left: 100px;
+        .dropdown-content a:hover {
+            background-color: #262626f1;
         }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
 
         #allUsers {
             display: flex;
@@ -112,135 +134,223 @@
         .eachPerson button:hover {
             background-color: #33c160;
         }
-        section button{
+
+        section button.add-to-cart {
             background-color: #002626;
+            border: 1px solid #002626;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 5px;
+            display: block;
+            margin: 30px auto 50px auto;
         }
 
-        section button:hover {
+
+        section button.add-to-cart:hover {
             background-color: #33c160;
             color: white;
         }
 
-        .dropdown {
-            position: relative;
-        }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 150px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            position: absolute;
-            background-color: #4caf4f00;
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #002626;
             color: white;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-
+            padding: 20px 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 30px;
         }
 
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
+        footer .footer-content {
+            text-align: center;
+            flex: 1 1 250px;
+            margin: 10px;
         }
 
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
+        footer .footer-content h2 {
+            margin: 0;
+            letter-spacing: 2px;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
+        footer .footer-content p {
+            font-size: 11px;
+            color: #33c160;
+            margin: 5px 0 0 0;
         }
 
-        .dropdown:hover .dropbtn {
-            background-color: #3e8e4100;
+        footer .social-icons {
+            margin-top: 10px;
+            font-size: 22px;
+        }
+
+        footer .social-icons i {
+            margin: 0 6px;
+            color: #33c160;
+        }
+
+        .navbar1 .icons a i {
+            color: white;
+        }
+
+        section h1{
+            display: flex;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+
+        @media (max-width: 1024px) {
+            .eachPerson {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            #list ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                background-color: #262626f1;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+                z-index: 10;
+            }
+
+            #list.show ul {
+                display: flex;
+            }
+
+            .eachPerson {
+                width: 80%;
+                margin: 20px auto;
+            }
+
+            footer {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            footer .footer-content {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar1 {
+                flex-direction: column;
+                height: auto;
+            }
+
+            #logo h2 {
+                font-size: 22px;
+            }
+
+            #list ul {
+                gap: 10px;
+            }
+
+            .eachPerson img {
+                width: 100%;
+                height: auto;
+            }
+
+            section h1 {
+                font-size: 30px;
+            }
+
+            footer {
+                font-size: 12px;
+                padding: 15px;
+            }
+
+            footer .social-icons {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            section h1 {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
     <nav class="navbar1">
-        <div id="logo" style="margin-left: 15px;">
+        <div id="logo">
             <h2>XTRA</h2>
             <p>FLOWER SHOP</p>
         </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
         <div id="list">
             <ul>
-                <li>
-                    <a href="index.html">HOME</a>
-                </li>
+                <li><a href="index.html">HOME</a></li>
                 <li class="dropdown">
                     <p class="dropbtn">SHOP
                     <div class="dropdown-content">
-                        <a href="#"><a href="allproduct.html">All prroduct</a></a>
-                        <a href="#"><a href="cart.html">Cart</a></a>
-                        <a href="#"><a href="#">My account</a></a>
+                        <a href="allproduct.html">All Product</a>
+                        <a href="cart.html">Cart</a>
                     </div>
                     </p>
-
                 </li>
-                <li>
-                    <a href="about.html">ABOUT</a>
-                </li>
-                <li>
-                    <a href="contact.html">CONTACT</a>
-                </li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </div>
+
         <div class="icons">
-            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></i>
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
             <i class="fa-regular fa-heart"></i>
             <i class="fa-solid fa-user"></i>
         </div>
     </nav>
+
     <section>
-        <h1 style="display: flex; justify-content: center;font-size: 50px;"><span style="color: #33c160;">Best
-                seller</span>flowers</h1>
+        <h1>
+            <div style="color:#33c160;">Best seller </div>flowers
+        </h1>
         <div>
             <p id="allUsers"></p>
         </div>
-        <!-- <button style="position: relative; left: 570px; margin-bottom: 50px;padding: 10px 15px; border: 1px solid;">VIEW
-            MORE</button> -->
+
     </section>
-    <footer style="display: flex; height: 180px;">
-        <div style="width: 300px;height: 80px; background-color: #002626;color: white; padding: 50px;">
-            <div style="position: relative; bottom: 50px;left: 200px;">
-                <div style="margin-bottom: 50px;">
-                    <h2>XTRA</h2>
-                    <p style="font-size: 10px;color: #33c160;">FLOWER SHOP</p>
-                </div>
-                <div>
-                    <i class="fa-brands fa-square-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-square-twitter"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                </div>
-            </div>
-        </div>
-        <div style="background-color: #e9edf5; width: 850px; height: 180px; display: flex; margin-bottom: 10px;">
-            <div style="padding: 20px;">
-                <p style="color: #33c160;">CONTACT</p>
-                <p>info@xtraflower.com</p>
-                <p>+1 (800) 345 678</p>
-            </div>
-            <div style="max-width: 250px;padding: 20px;">
-                <p style="color: #33c160;">ADDRESS</p>
-                <p>1079 Terry Lane,</p>
-                <p>Winter Park, Florida</p>
-            </div>
-            <div style="padding: 20px;">
-                <p style="color: #33c160;">WORKING HOURS</p>
-                <p>Mon-Fri 9 ~ 18</p>
-                <p>Sat-Sun 10~ 20</p>
+
+    <footer>
+        <div class="footer-content">
+            <h2>XTRA</h2>
+            <p>FLOWER SHOP</p>
+            <div class="social-icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-square-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
             </div>
         </div>
     </footer>
 
-
+    <script>
+        function toggleMenu() {
+            const list = document.getElementById('list');
+            list.classList.toggle('show');
+        }
+    </script>
     <script src="allproduct.js"></script>
 </body>
 

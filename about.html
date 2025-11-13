@@ -108,6 +108,224 @@
             background-color: #00000006;
             padding-bottom: 100px;
         }
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #002626;
+            color: white;
+            padding: 20px 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 30px;
+        }
+
+        footer .footer-content {
+            text-align: center;
+            flex: 1 1 250px;
+            margin: 10px;
+        }
+
+        footer .footer-content h2 {
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        footer .footer-content p {
+            font-size: 11px;
+            color: #33c160;
+            margin: 5px 0 0 0;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+            font-size: 22px;
+        }
+
+        footer .social-icons i {
+            margin: 0 6px;
+            color: #33c160;
+        }
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        @media (max-width: 992px) {
+    .social {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .social img {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .social p {
+        max-width: 90%;
+    }
+
+    #list ul {
+        gap: 20px;
+    }
+    aside > div {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    height: auto;
+  }
+
+  aside > div > div {
+    width: 40%;
+    margin-bottom: 20px;
+  }
+
+  aside img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+    /* Hide normal nav and show hamburger */
+    #list {
+        display: none;
+        width: 100%;
+        background-color: #262626f1;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        text-align: center;
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    #list.show {
+        display: block;
+    }
+
+    #list ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .icons {
+        position: absolute;
+        right: 60px;
+        top: 20px;
+    }
+
+    /* ABOUT section */
+    .social {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .social .image img {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .social div:first-child p:first-child {
+        font-size: 32px;
+    }
+
+    /* REVIEWS */
+    aside > div {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    gap: 10px;
+  }
+
+  aside > div > div {
+    width: 85%;
+    max-width: 320px;
+  }
+
+  aside h1 {
+    font-size: 20px;
+  }
+
+  aside img {
+    width: 70px;
+  }
+
+  aside p {
+    font-size: 10px;
+  }
+
+  aside p b {
+    font-size: 10   px;
+  }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    footer .footer-content {
+        margin: 5px 0;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .social div:first-child p:first-child {
+        font-size: 24px;
+    }
+
+    .social div:first-child p:nth-child(2) {
+        font-size: 16px;
+    }
+
+    aside > div > div {
+    width: 90%;
+  }
+
+  aside h1 {
+    font-size: 20px;
+  }
+
+  aside img {
+    width: 60px;
+  }
+
+  aside p {
+    font-size: 12px;
+  }
+
+  aside p b {
+    font-size: 14px;
+  }
+
+    footer .footer-content h2 {
+        font-size: 18px;
+    }
+
+    footer .footer-content p {
+        font-size: 10px;
+    }
+}
+
+       
+        
     </style>
 </head>
 
@@ -117,6 +335,11 @@
             <h2>XTRA</h2>
             <p>FLOWER SHOP</p>
         </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
         <div id="list">
             <ul>
                 <li>
@@ -127,7 +350,7 @@
                     <div class="dropdown-content">
                         <a href="#"><a href="allproduct.html">All prroduct</a></a>
                         <a href="#"><a href="cart.html">Cart</a></a>
-                        <a href="#"><a href="#">My account</a></a>
+                        <!-- <a href="#"><a href="#">My account</a></a> -->
                     </div>
                     </p>
 
@@ -146,7 +369,7 @@
             <i class="fa-solid fa-user"></i>
         </div>
     </nav>
-    <div style="margin-top: 50px; display: flex; justify-content: space-around;">
+    <div style="margin-top: 50px; display: flex; justify-content: space-around; " class="social">
         <div>
             <p style="color: #3e8e41; font-size: 45px;">ABOUT US</p>
             <p style="font-size: 20px;color: #262626a7">WHO WE ARE?</p>
@@ -161,7 +384,7 @@
                 online stores, are the main flower-only outlets, but supermarkets, garden supply stores, and filling
                 stations also sell flowers.</p>
         </div>
-        <div>
+        <div class="image">
             <img src="Screenshot 2025-11-11 144042.png" alt="" style="border-radius: 10px; width: 500px;">
         </div>
     </div>
@@ -231,39 +454,27 @@
             </div>
         </div>
     </aside>
-    <footer style="display: flex; height: 180px;">
-        <div style="width: 300px;height: 80px; background-color: #002626;color: white; padding: 50px;">
-            <div style="position: relative; bottom: 50px;left: 200px;">
-                <div style="margin-bottom: 50px;">
-                    <h2>XTRA</h2>
-                    <p style="font-size: 10px;color: #33c160;">FLOWER SHOP</p>
-                </div>
-                <div>
-                    <i class="fa-brands fa-square-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-square-twitter"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                </div>
-            </div>
-        </div>
-        <div style="background-color: #e9edf5; width: 850px; height: 180px; display: flex; margin-bottom: 10px;">
-            <div style="padding: 20px;">
-                <p style="color: #33c160;">CONTACT</p>
-                <p>info@xtraflower.com</p>
-                <p>+1 (800) 345 678</p>
-            </div>
-            <div style="max-width: 250px;padding: 20px;">
-                <p style="color: #33c160;">ADDRESS</p>
-                <p>1079 Terry Lane,</p>
-                <p>Winter Park, Florida</p>
-            </div>
-            <div style="padding: 20px;">
-                <p style="color: #33c160;">WORKING HOURS</p>
-                <p>Mon-Fri 9 ~ 18</p>
-                <p>Sat-Sun 10~ 20</p>
+    <footer>
+        <div class="footer-content">
+            <h2>XTRA</h2>
+            <p>FLOWER SHOP</p>
+            <div class="social-icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-square-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
             </div>
         </div>
     </footer>
+
+
+
+    <script>
+        function toggleMenu() {
+            const list = document.getElementById('list');
+            list.classList.toggle('show');
+        }
+    </script>
 </body>
 
 </html>

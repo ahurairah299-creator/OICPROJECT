@@ -99,8 +99,8 @@
         }
 
         .eachPerson button {
-            position: relative;
-            left: 60px;
+            display: flex;
+            justify-content: center;
             border: none;
             color: white;
             background-color: #002626;
@@ -111,7 +111,8 @@
         .eachPerson button:hover {
             background-color: #33c160;
         }
-        section button{
+
+        section button {
             background-color: #002626;
         }
 
@@ -158,19 +159,378 @@
         .dropdown:hover .dropbtn {
             background-color: #3e8e4100;
         }
-        aside img{
+
+        /* aside img {
             max-width: 100px;
             border-radius: 10px;
-        }
-        .rate{
+        } */
+
+        .rate {
             margin-top: 20px;
-            
-        }
-        aside{
-            background-color: #00000006;
-            padding: 100px;
+
         }
 
+        /* aside {
+            background-color: #00000006;
+            padding: 100px;
+        } */
+
+        aside {
+            background-color: #00000006;
+            padding: 50px 20px;
+        }
+
+        aside h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        aside .review-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        aside .review-card {
+            flex: 1 1 250px;
+
+            max-width: 300px;
+            background-color: white;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.36) 0px 3px 8px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        aside .review-card img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+        }
+
+        aside .review-card p:last-child {
+            display: block;
+
+        }
+
+
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 20;
+        }
+
+        #list ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        #list.show ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #262626f1;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 10;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #002626;
+            color: white;
+            padding: 20px 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer .footer-content {
+            text-align: center;
+            flex: 1 1 250px;
+            margin: 10px;
+        }
+
+        footer .footer-content h2 {
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        footer .footer-content p {
+            font-size: 11px;
+            color: #33c160;
+            margin: 5px 0 0 0;
+        }
+
+        footer .footer-content .social-icons {
+            margin-top: 10px;
+            font-size: 22px;
+        }
+
+        footer .footer-content .social-icons i {
+            margin: 0 6px;
+            color: #33c160;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            #list ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+
+            .icons {
+                margin-top: 10px;
+            }
+
+            .second-phase {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .second-phase img {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            #info {
+                margin: 20px 0 0 0;
+            }
+
+            #info h2 {
+                font-size: 28px;
+            }
+
+            #info p {
+                font-size: 14px;
+            }
+
+
+            section button.add-to-cart {
+                position: static !important;
+                display: block;
+                margin: 20px auto 50px auto;
+            }
+
+
+            .eachPerson {
+                width: 90%;
+                margin: 20px auto;
+            }
+
+
+            aside div>div p:last-child {
+                display: none;
+            }
+
+            aside div {
+                flex-direction: column;
+                align-items: center;
+                width: 90% !important;
+                margin: 10px auto;
+            }
+
+
+
+
+        }
+
+
+        @media (max-width: 1024px) {
+            .navbar1 {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                text-align: center;
+            }
+
+            #list ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .icons {
+                margin-top: 10px;
+            }
+
+            .second-phase {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .second-phase img {
+                width: 70%;
+                margin: 0 auto;
+            }
+
+            #info {
+                margin: 20px 0 0 0;
+            }
+
+            #info h2 {
+                font-size: 40px;
+            }
+
+            #info p {
+                font-size: 16px;
+            }
+
+            .eachPerson {
+                width: 40%;
+            }
+
+            aside {
+                padding: 50px;
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+            * {
+                box-sizing: border-box;
+            }
+
+            .navbar1 {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            #logo h2 {
+                font-size: 24px;
+            }
+
+            #logo p {
+                font-size: 10px;
+            }
+
+            #list ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .second-phase img {
+                width: 80%;
+            }
+
+            #info h2 {
+                font-size: 30px;
+            }
+
+            #info p {
+                font-size: 14px;
+            }
+
+            .eachPerson {
+                width: 80%;
+            }
+
+            section h1 {
+                font-size: 30px;
+                text-align: center;
+            }
+
+            section button {
+                left: 0;
+                display: block;
+                margin: 20px auto;
+            }
+
+            aside {
+                padding: 30px 10px;
+            }
+
+            aside div {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            aside div>div {
+                width: 80% !important;
+                margin-bottom: 20px;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+
+            footer div {
+                width: 100% !important;
+                text-align: center;
+                padding: 20px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .navbar1 {
+                font-size: 12px;
+            }
+
+            .second-phase img {
+                width: 100%;
+            }
+
+            #info h2 {
+                font-size: 24px;
+            }
+
+            .eachPerson img {
+                width: 100%;
+                height: auto;
+            }
+
+            aside h1 {
+                font-size: 24px;
+            }
+
+            .rate i {
+                font-size: 12px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+        }
+
+        @media (max-width: 480px) {
+            aside .review-card {
+                flex: 1 1 90%;
+            }
+
+            aside .review-card p:last-child {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -180,6 +540,10 @@
             <h2>XTRA</h2>
             <p>FLOWER SHOP</p>
         </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
         <div id="list">
             <ul>
                 <li>
@@ -190,7 +554,7 @@
                     <div class="dropdown-content">
                         <a href="#"><a href="allproduct.html">All prroduct</a></a>
                         <a href="#"><a href="cart.html">Cart</a></a>
-                        <a href="#"><a href="#">My account</a></a>
+                        <!-- <a href="#"><a href="#">My account</a></a> -->
                     </div>
                     </p>
 
@@ -226,13 +590,15 @@
         <div>
             <p id="allUsers"></p>
         </div>
-        <button style="position: relative; left: 570px; margin-bottom: 50px;padding: 10px 15px; border: 1px solid;"><a href="allproduct.html">VIEW MORE</a></button>
+        <button style="position: relative; left: 570px; margin-bottom: 50px;padding: 10px 15px; border: 1px solid;"
+            class="add-to-cart" data-name="Rose Bouquet" data-price="25" data-image="rose.jpg"><a
+                href="allproduct.html">VIEW MORE</a></button>
     </section>
     <aside>
-        <h1 style="display: flex; justify-content: center; padding: 20px;">REVIEWS</h1>
-        <div style="display: flex;justify-content: space-around; margin: 20px;height: 330px; ">
-            <div style="border: 1px solid black; display: flex; flex-direction: column; align-items: center; width: 22%; text-align: center; background-color: white; box-shadow: rgba(0, 0, 0, 0.36) 0px 3px 8px;">
-                <img src="user.png" alt="" style="margin-top: 10px;">
+        <h1>REVIEWS</h1>
+        <div class="review-cards">
+            <div class="review-card">
+                <img src="user.png" alt="">
                 <div class="rate">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -240,14 +606,13 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star-half-stroke"></i>
                 </div>
-                <p style="font-size: 20px;"><b>Crips and refreshing!</b></p>
-                <p style="font-size: 12px; color: rgba(0, 0, 0, 0.819); max-width: 200px; margin-bottom: 0px; margin-top: 0px;">Found great quality items at budget-friendly prices. Staff gave honest recommendations without
-                    pressure. Perfect for affordable makeup hauls.
-                </p>
+                <p><b>Crips and refreshing!</b></p>
+                <p>Found great quality items at budget-friendly prices. Staff gave honest recommendations without
+                    pressure. Perfect for affordable makeup hauls.</p>
                 <p><b>Aarav Mhata</b></p>
             </div>
-            <div style="border: 1px solid black; display: flex; flex-direction: column; align-items: center; width: 22%; text-align: center; box-shadow: rgba(0, 0, 0, 0.36) 0px 3px 8px;">
-                <img src="user.png" alt="" style=" margin-top: 10px;">
+            <div class="review-card">
+                <img src="user.png" alt="">
                 <div class="rate">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -255,14 +620,13 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star-half-stroke"></i>
                 </div>
-                <p style="font-size: 20px;"><b>Crips and refreshing!</b></p>
-                <p style="font-size: 12px; color: rgba(0, 0, 0, 0.819); max-width: 200px; margin-bottom: 0px; margin-top: 0px;">Amazing selection of makeup, but the checkout was slow. Staff were polite but seemed overwhelmed.
-                    Worth visiting for the product variety.
-                </p>
+                <p><b>Crips and refreshing!</b></p>
+                <p>Found great quality items at budget-friendly prices. Staff gave honest recommendations without
+                    pressure. Perfect for affordable makeup hauls.</p>
                 <p><b>Aarav Mhata</b></p>
             </div>
-            <div style="border: 1px solid black; display: flex; flex-direction: column;align-items: center; width: 22%; text-align: center; box-shadow: rgba(0, 0, 0, 0.36) 0px 3px 8px;">
-                <img src="user.png" alt="" style="margin-top: 10px;">
+            <div class="review-card">
+                <img src="user.png" alt="">
                 <div class="rate">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -270,64 +634,49 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star-half-stroke"></i>
                 </div>
-                <p style="font-size: 20px;"><b>Crips and refreshing!</b></p>
-                <p style="font-size: 12px; color: rgba(0, 0, 0, 0.819); max-width: 200px; margin-bottom: 0px; margin-top: 0px;">Found great quality items at budget-friendly prices. Staff gave honest recommendations without
-                    pressure. Perfect for affordable makeup hauls.
+                <p><b>Crips and refreshing!</b></p>
+                <p>Found great quality items at budget-friendly prices. Staff gave honest recommendations without
+                    pressure. Perfect for affordable makeup hauls.</p>
+                <p><b>Aarav Mhata</b></p>
+            </div>
+            <div class="review-card">
+                <img src="user.png" alt="">
+                <div class="rate">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p><b>Crips and refreshing!</b></p>
+                <p>Found great quality items at budget-friendly prices. Staff gave honest recommendations without
+                    pressure. Perfect for affordable makeup hauls.</p>
+                <p><b>Aarav Mhata</b></p>
+            </div>
 
-                </p>
-                <p><b>Aarav Mhata</b></p>
-            </div>
-            <div style="border: 1px solid black; display: flex; flex-direction: column;align-items: center; width: 22%; text-align: center; box-shadow: rgba(0, 0, 0, 0.36) 0px 3px 8px;">
-                <img src="user.png" alt="" style="margin-top: 10px;">
-                <div class="rate">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <p style="font-size: 20px;"><b>Crips and refreshing!</b></p>
-                <p style="font-size: 12px; color: rgba(0, 0, 0, 0.819); max-width: 200px; margin-bottom: 0px; margin-top: 0px;">Excellent range of pro-grade products and tools. Staff were knowledgeable and even offered to order
-                    an item for me. Ideal for both pros and enthusiasts.
-                </p>
-                <p><b>Aarav Mhata</b></p>
-            </div>
+
         </div>
     </aside>
-    <footer style="display: flex; height: 180px;">
-        <div style="width: 300px;height: 80px; background-color: #002626;color: white; padding: 50px;">
-            <div style="position: relative; bottom: 50px;left: 200px;">
-                <div style="margin-bottom: 50px;">
-                    <h2>XTRA</h2>
-                    <p style="font-size: 10px;color: #33c160;">FLOWER SHOP</p>
-                </div>
-                <div>
-                    <i class="fa-brands fa-square-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-square-twitter"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                </div>
-            </div>
-        </div>
-        <div style="background-color: #e9edf5; width: 850px; height: 180px; display: flex; margin-bottom: 10px;">
-            <div style="padding: 20px;">
-                <p style="color: #33c160;">CONTACT</p>
-                <p>info@xtraflower.com</p>
-                <p>+1 (800) 345 678</p>
-            </div>
-            <div style="max-width: 250px;padding: 20px;">
-                <p style="color: #33c160;">ADDRESS</p>
-                <p>1079 Terry Lane,</p>
-                <p>Winter Park, Florida</p>
-            </div>
-            <div style="padding: 20px;">
-                <p style="color: #33c160;">WORKING HOURS</p>
-                <p>Mon-Fri 9 ~ 18</p>
-                <p>Sat-Sun 10~ 20</p>
+    <footer>
+        <div class="footer-content">
+            <h2>XTRA</h2>
+            <p>FLOWER SHOP</p>
+            <div class="social-icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-square-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
             </div>
         </div>
     </footer>
     <script src="index.js"></script>
+    <script>
+        function toggleMenu() {
+            const list = document.getElementById('list');
+            list.classList.toggle('show');
+        }
+    </script>
+
 </body>
 
 </html>

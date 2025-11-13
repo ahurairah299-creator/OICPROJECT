@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping Cart - XTRA Flower Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
+
 
         .navbar1 {
             display: flex;
@@ -20,11 +25,16 @@
             color: white;
             height: 70px;
             box-shadow: rgba(100, 100, 111, 0.648) 0px 7px 29px 0px;
-
+            padding: 0 20px;
+            flex-wrap: wrap;
         }
 
         .icons i {
             margin-right: 20px;
+        }
+
+        .navbar1 h2 {
+            margin-top: 0px;
         }
 
         #logo p {
@@ -37,10 +47,10 @@
             justify-content: flex-start;
             gap: 30px;
             align-items: center;
+        }
 
-            :hover {
-                color: green;
-            }
+        #list ul li:hover {
+            color: #33c160;
         }
 
         li {
@@ -53,67 +63,182 @@
             color: white;
         }
 
-        .second-phase {
-            display: flex;
-            background-color: #00000006;
+
+        h1 {
+            text-align: center;
+            margin: 40px 0;
+            color: #002626;
+            font-size: 42px;
         }
 
-        .second-phase img {
-            margin-left: 50px;
-        }
-
-        .second-phase button {
-            color: white;
-            background-color: black;
-            border: none;
-            padding: 10px;
-        }
-
-        #info {
-            margin-left: 100px;
-        }
-
-        #allUsers {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 50px;
-        }
-
-        .eachPerson {
-            width: 20%;
-            text-align: left;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        .cart-container {
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
-            margin-bottom: 30px;
-            position: relative;
         }
 
-        .eachPerson img {
-            width: 70%;
-            height: 180px;
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
+            background-color: white;
         }
 
-        .eachPerson button {
-            position: relative;
-            left: 60px;
+        .cart-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .cart-details {
+            flex: 1;
+        }
+
+        .cart-details h3 {
+            margin: 0 0 10px 0;
+            color: #002626;
+        }
+
+        .cart-details p {
+            margin: 5px 0;
+            color: #33c160;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quantity-controls button {
+            background-color: #002626;
+            color: white;
             border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .quantity-controls button:hover {
+            background-color: #33c160;
+        }
+
+        .quantity-controls span {
+            font-size: 16px;
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
             color: white;
-            background-color: #002626;
+            border: none;
+            padding: 10px 20px;
             border-radius: 5px;
-            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
         }
 
-        .eachPerson button:hover {
-            background-color: #33c160;
+        .delete-btn:hover {
+            background-color: #c82333;
         }
-        section button{
+
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+
+        .empty-cart i {
+            font-size: 80px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .cart-summary {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
+        }
+
+        .cart-summary h2 {
+            color: #002626;
+            margin-bottom: 15px;
+        }
+
+        .cart-summary p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .checkout-btn {
             background-color: #002626;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
         }
 
-        section button:hover {
+        .checkout-btn:hover {
             background-color: #33c160;
+        }
+
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #002626;
             color: white;
+            padding: 20px 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 50px;
+        }
+
+        footer .footer-content {
+            text-align: center;
+            flex: 1 1 250px;
+            margin: 10px;
+        }
+
+        footer .footer-content h2 {
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        footer .footer-content p {
+            font-size: 11px;
+            color: #33c160;
+            margin: 5px 0 0 0;
+        }
+
+        footer .footer-content .social-icons {
+            margin-top: 10px;
+            font-size: 22px;
+        }
+
+        footer .footer-content .social-icons i {
+            margin: 0 6px;
+            color: #33c160;
         }
 
         .dropdown {
@@ -125,15 +250,9 @@
             position: absolute;
             background-color: #f9f9f9;
             min-width: 150px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            position: absolute;
-            background-color: #4caf4f00;
-            color: white;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 100;
         }
 
         .dropdown-content a {
@@ -141,88 +260,282 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
+            background-color: #262626f1;
         }
 
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        .dropdown:hover .dropbtn {
-            background-color: #3e8e4100;
+
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 34px;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cart-item img {
+                width: 100%;
+                height: auto;
+            }
+
+            .cart-summary {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            
+            .navbar1 {
+                flex-wrap: wrap;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            #list ul {
+                display: none;
+                flex-direction: column;
+                background-color: #262626;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            #list.active ul {
+                display: flex;
+            }
+
+            .icons {
+                display: none;
+            }
+
+
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                color: white;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .cart-container {
+                padding: 10px;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .cart-details p {
+                font-size: 16px;
+            }
+
+            .delete-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            .cart-item {
+                padding: 10px;
+            }
+
+            .quantity-controls button {
+                padding: 4px 10px;
+                font-size: 14px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .footer-content h2 {
+                font-size: 18px;
+            }
         }
     </style>
+
 </head>
+
 <body>
     <nav class="navbar1">
         <div id="logo" style="margin-left: 15px;">
             <h2>XTRA</h2>
             <p>FLOWER SHOP</p>
         </div>
+
+        <!-- HAMBURGER ICON -->
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
         <div id="list">
             <ul>
-                <li>
-                    <a href="index.html">HOME</a>
-                </li>
+                <li><a href="index.html">HOME</a></li>
                 <li class="dropdown">
-                    <p class="dropbtn">SHOP
+                    <p class="dropbtn" style="cursor: pointer; margin-top: 15px;">SHOP
                     <div class="dropdown-content">
-                        <a href="#"><a href="allproduct.html">All prroduct</a></a>
-                        <a href="#"><a href="cart.html">Cart</a></a>
-                        <a href="#"><a href="#">My account</a></a>
+                        <a href="allproduct.html">All product</a>
+                        <a href="cart.html">Cart</a>
                     </div>
                     </p>
-
                 </li>
-                <li>
-                    <a href="about.html">ABOUT</a>
-                </li>
-                <li>
-                    <a href="contact.html">CONTACT</a>
-                </li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </div>
+
         <div class="icons">
-            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></i>
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
             <i class="fa-regular fa-heart"></i>
             <i class="fa-solid fa-user"></i>
         </div>
     </nav>
-    <footer style="display: flex; height: 180px;">
-        <div style="width: 300px;height: 80px; background-color: #002626;color: white; padding: 50px;">
-            <div style="position: relative; bottom: 50px;left: 200px;">
-                <div style="margin-bottom: 50px;">
-                    <h2>XTRA</h2>
-                    <p style="font-size: 10px;color: #33c160;">FLOWER SHOP</p>
-                </div>
-                <div>
-                    <i class="fa-brands fa-square-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-square-twitter"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                </div>
-            </div>
-        </div>
-        <div style="background-color: #e9edf5; width: 850px; height: 180px; display: flex; margin-bottom: 10px;">
-            <div style="padding: 20px;">
-                <p style="color: #33c160;">CONTACT</p>
-                <p>info@xtraflower.com</p>
-                <p>+1 (800) 345 678</p>
-            </div>
-            <div style="max-width: 250px;padding: 20px;">
-                <p style="color: #33c160;">ADDRESS</p>
-                <p>1079 Terry Lane,</p>
-                <p>Winter Park, Florida</p>
-            </div>
-            <div style="padding: 20px;">
-                <p style="color: #33c160;">WORKING HOURS</p>
-                <p>Mon-Fri 9 ~ 18</p>
-                <p>Sat-Sun 10~ 20</p>
+
+
+    <h1> My Shopping Cart</h1>
+    <div class="cart-container" id="cartContainer"></div>
+
+    <footer>
+        <div class="footer-content">
+            <h2>XTRA</h2>
+            <p>FLOWER SHOP</p>
+            <div class="social-icons">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-square-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
             </div>
         </div>
     </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.getElementById('list');
+
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+        const cartContainer = document.getElementById("cartContainer");
+
+
+        let cart = JSON.parse(localStorage.getItem("carts")) || [];
+
+        function updateQuantity(index, change) {
+            if (cart[index].quantity + change > 0) {
+                cart[index].quantity += change;
+                localStorage.setItem("carts", JSON.stringify(cart));
+                renderCart();
+            }
+        }
+
+        function deleteItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("carts", JSON.stringify(cart));
+            renderCart();
+        }
+
+        function renderCart() {
+            cartContainer.innerHTML = "";
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <h2>Your cart is empty</h2>
+                        <p>Start shopping to add items to your cart!</p>
+                        <a href="index.html" style="display: inline-block; margin-top: 20px; padding: 12px 30px; background-color: #002626; color: white; border-radius: 5px; text-decoration: none;">Continue Shopping</a>
+                    </div>
+                `;
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+
+                const div = document.createElement("div");
+                div.classList.add("cart-item");
+                div.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}">
+                    <div class="cart-details">
+                        <h3>${item.title}</h3>
+                        <p>${item.price.toFixed(2)}</p>
+                        <div class="quantity-controls">
+                            <button onclick="updateQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateQuantity(${index}, 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="delete-btn" onclick="deleteItem(${index})">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                `;
+                cartContainer.appendChild(div);
+            });
+        }
+
+
+        window.updateQuantity = updateQuantity;
+        window.deleteItem = deleteItem;
+
+        renderCart();
+    </script>
 </body>
+
 </html>
