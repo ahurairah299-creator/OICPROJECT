@@ -139,6 +139,22 @@
             margin-right: 20px;
         }
 
+        #cart-count {
+            position: absolute;
+            top: 12px;
+            right: 10px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+        }
+
         #logo p {
             font-size: 10px;
         }
@@ -428,7 +444,7 @@
     <nav class="navbar1">
         <div id="logo" style="margin-left: 15px;">
             <h2>XTRA</h2>
-            <p>FLOWER SHOP</p>
+            
         </div>
         <div class="hamburger" onclick="toggleMenu()">
             <i class="fa-solid fa-bars"></i>
@@ -457,8 +473,7 @@
         </div>
         <div class="icons">
             <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-            <!-- <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-user"></i> -->
+            <span id="cart-count">0</span>
         </div>
     </nav>
 

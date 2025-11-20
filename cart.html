@@ -33,6 +33,22 @@
             margin-right: 20px;
         }
 
+        #cart-count {
+            position: absolute;
+            top: 22px;
+            right: 25px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+        }
+
         .navbar1 h2 {
             margin-top: 0px;
         }
@@ -420,13 +436,12 @@
 
         <div class="icons">
             <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-            <!-- <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-user"></i> -->
+            <span id="cart-count">0</span>
         </div>
     </nav>
 
 
-    <h1> My Shopping Cart</h1>
+    <h1>My Shopping Cart</h1>
     <div class="cart-container" id="cartContainer"></div>
 
     <footer>
@@ -442,46 +457,31 @@
         </div>
     </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script>
-
         const hamburger = document.getElementById('hamburger');
         const navList = document.getElementById('list');
 
         hamburger.addEventListener('click', () => {
             navList.classList.toggle('active');
         });
+
         const cartContainer = document.getElementById("cartContainer");
 
-
         let cart = JSON.parse(localStorage.getItem("carts")) || [];
+
+        
+        function updateCartCount() {
+            const cartCount = document.getElementById("cart-count");
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
 
         function updateQuantity(index, change) {
             if (cart[index].quantity + change > 0) {
                 cart[index].quantity += change;
                 localStorage.setItem("carts", JSON.stringify(cart));
                 renderCart();
+                updateCartCount(); 
             }
         }
 
@@ -489,6 +489,7 @@
             cart.splice(index, 1);
             localStorage.setItem("carts", JSON.stringify(cart));
             renderCart();
+            updateCartCount(); 
         }
 
         function renderCart() {
@@ -515,7 +516,7 @@
                     <img src="${item.image}" alt="${item.title}">
                     <div class="cart-details">
                         <h3>${item.title}</h3>
-                        <p>${item.price.toFixed(2)}</p>
+                        <p>$${item.price.toFixed(2)}</p>
                         <div class="quantity-controls">
                             <button onclick="updateQuantity(${index}, -1)">-</button>
                             <span>${item.quantity}</span>
@@ -530,11 +531,11 @@
             });
         }
 
-
         window.updateQuantity = updateQuantity;
         window.deleteItem = deleteItem;
 
         renderCart();
+        updateCartCount(); 
     </script>
 </body>
 

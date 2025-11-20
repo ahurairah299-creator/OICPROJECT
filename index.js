@@ -9,6 +9,12 @@ const fetchData = {
 let users = [];
 let selected_items = JSON.parse(localStorage.getItem("carts")) || [];
 
+function updateCartCount() {
+  const cartCount = document.getElementById("cart-count");
+  const totalItems = selected_items.reduce((sum, item) => sum + item.quantity, 0);
+  cartCount.textContent = totalItems;
+}
+
 async function getPosts() {
   let response = await fetch(url, fetchData);
   let data = await response.json();
@@ -50,10 +56,14 @@ function followUser(id){
         });
     }
     
-   
     localStorage.setItem("carts", JSON.stringify(selected_items));
     console.log(selected_items);
     
     
+    updateCartCount();
+    
     alert(`${item.title} added to cart!`);
 }
+
+
+updateCartCount();

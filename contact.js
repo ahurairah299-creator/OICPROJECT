@@ -100,3 +100,5 @@ document.addEventListener("DOMContentLoaded", function () {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 });
+
+
